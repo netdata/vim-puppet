@@ -41,6 +41,7 @@ syn match   puppetBrace           "{"
 syn match   puppetBrace           "}"
 syn match   puppetBrack           "\["
 syn match   puppetBrack           "\]"
+syn match   puppetConditional     "\<\%(if\|elsif\|unless\|given\|when\|default\)\>"
 
 syn region  puppetString start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=puppetVariable
 syn region  puppetString start=+'+ skip=+\\\\\|\\"+ end=+'+
@@ -64,6 +65,7 @@ if version >= 508 || !exists("did_puppet_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
+  HiLink puppetConditional          Conditional
   HiLink puppetVariable             Identifier
   HiLink puppetBoolean              Boolean
   HiLink puppetType                 Identifier
