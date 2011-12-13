@@ -34,7 +34,9 @@ syn match   puppetParam           "\w\+\s*=>" contains=puppetTypeRArrow,puppetPa
 syn match   puppetParamRArrow       "=>" contained
 syn match   puppetParamName       "\w\+" contained
 syn match   puppetVariable           "$\w\+"
+syn match   puppetVariable           "$::\w\+"
 syn match   puppetVariable           "${\w\+}"
+syn match   puppetVariable           "${::\w\+}"
 syn match   puppetParen           "("
 syn match   puppetParen           ")"
 syn match   puppetBrace           "{"
