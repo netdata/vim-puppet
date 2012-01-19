@@ -47,6 +47,7 @@ syn match   puppetConditional     "\<\%(if\|elsif\|unless\|given\|when\|default\
 
 syn region  puppetString start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=puppetVariable
 syn region  puppetString start=+'+ skip=+\\\\\|\\"+ end=+'+
+syn region  puppetString start=+/+ skip=+\\\\\|\\/+ end=+/+
 
 syn keyword puppetBoolean    true false 
 syn keyword puppetKeyword    import inherits include
