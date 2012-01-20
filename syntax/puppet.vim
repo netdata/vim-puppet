@@ -43,11 +43,15 @@ syn match   puppetBrace           "{"
 syn match   puppetBrace           "}"
 syn match   puppetBrack           "\["
 syn match   puppetBrack           "\]"
-syn match   puppetConditional     "\<\%(if\|elsif\|unless\|given\|when\|default\)\>"
+syn match   puppetConditional     "\<\%(case\|if\|else|elsif\|given\|when\|default\)\>"
 
 syn region  puppetString start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=puppetVariable
 syn region  puppetString start=+'+ skip=+\\\\\|\\"+ end=+'+
 syn region  puppetString start=+/+ skip=+\\\\\|\\/+ end=+/+
+
+syn keyword puppetMetaParam  unless
+syn keyword puppetMetaParam  require
+syn keyword puppetMetaParam  onlyif
 
 syn keyword puppetBoolean    true false 
 syn keyword puppetKeyword    import inherits include
@@ -91,6 +95,7 @@ if version >= 508 || !exists("did_puppet_syn_inits")
   HiLink puppetTypeDefault          Type
   HiLink puppetParamName            Identifier
   HiLink puppetArgument             Identifier
+  HiLink puppetMetaParam            Conditional
 
   delcommand HiLink
 endif
