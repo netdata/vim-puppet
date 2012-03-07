@@ -98,9 +98,14 @@ snippet exec
 		${4}	=> ${5}
 	}
 snippet user
+<<<<<<< HEAD
 	user{"${1:user}":
 		comment		=> "${2:$1}",
+=======
+	user { "${1:user}":
+>>>>>>> 96c998a... puppet.snippets: made ensure parameter the first one in all snippets
 		ensure		=> present,
+		comment		=> "${2:$1}",
 		managehome	=> true,
 		home		=> "${3:/home/$1}"
 	}
@@ -135,9 +140,9 @@ snippet define
 		${3}
 	}
 snippet service
-	service{"${1:service}":
-		enable		=> ${2:true},
+	service { "${1:service}":
 		ensure		=> ${3:running},
+		enable		=> ${2:true},
 		hasstatus	=> true,
 	}
 snippet file
