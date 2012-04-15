@@ -162,7 +162,7 @@ if version >= 508 || !exists("did_puppet_syn_inits")
 
   " *Underlined     text that stands out, HTML links
   " *Error
-  "HiLink puppetResSep               Error
+  HiLink puppetResSep               Delimiter
 
   " *Ignore
 
