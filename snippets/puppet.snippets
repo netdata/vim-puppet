@@ -93,8 +93,8 @@ snippet cron
 	}
 snippet exec
 	exec{'${1:name}':
-	  command => "${2:$1}",
-	  user    => "${3:root}",
+	  command => '${2:$1}',
+	  user    => '${3:root}',
 	  ${4}    => ${5}
 	}
 snippet user
