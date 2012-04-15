@@ -142,5 +142,6 @@ snippet service
 	}
 snippet file
 	file{'${1:path}':
-	  ${2} => ${3}
+	  ensure => present,
+	  ${2}   => ${3}
 	}
