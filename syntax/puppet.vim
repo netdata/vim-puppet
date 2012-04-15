@@ -56,7 +56,6 @@ syn keyword puppetMetaParam  onlyif
 syn keyword puppetBoolean    true false 
 syn keyword puppetKeyword    import inherits include
 syn keyword puppetControl    case default 
-=======
 syn region  puppetDefine        keepend start="^\s*\(class\|define\|node\)" end='{' contains=puppetDefType,puppetDefName,PuppetDefArguments,puppetDefBrace
 syn match   puppetDefBrace      '{' contained
 syn match   puppetDefName       "[a-z]\w*" contained
@@ -95,7 +94,6 @@ syn match   puppetERB           '<%=\|<%\|-%>\|%>'
 
 syn keyword puppetKeyword       import inherits include
 syn keyword puppetConditional   case default if else elsif
->>>>>>> 08c65e2... puppet syntax highlight update
 
 " comments last overriding everything else
 syn match   puppetComment       "\s*#.*$" contains=puppetTodo
@@ -158,7 +156,6 @@ if version >= 508 || !exists("did_puppet_syn_inits")
   HiLink puppetParamName            Identifier
   HiLink puppetArgument             Identifier
   HiLink puppetMetaParam            Conditional
-=======
   HiLink puppetParamSep             Delimiter
   "HiLink puppetBrace                Delimiter
   "HiLink puppetTypeBrace            Delimiter
@@ -173,7 +170,6 @@ if version >= 508 || !exists("did_puppet_syn_inits")
   HiLink puppetComment              Comment
   " *Todo
   HiLink puppetTodo                 Todo
->>>>>>> 08c65e2... puppet syntax highlight update
 
   delcommand HiLink
 endif
