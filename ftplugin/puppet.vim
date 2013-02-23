@@ -3,6 +3,7 @@ set sts=2
 set sw=2
 set et
 syn on
+setl keywordprg="puppet describe --providers"
 
 " Have detection for tagbar
 let g:tagbar_type_puppet = {
