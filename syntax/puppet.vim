@@ -50,6 +50,8 @@ syn match   puppetBrack           "\["
 syn match   puppetBrack           "\]"
 syn match   puppetBrack           "<|"
 syn match   puppetBrack           "|>"
+syn match   puppetBrack           "|>>"
+syn match   puppetBrack           "<<|"
 
 " match 'present' in 'ensure => present'
 " match '2755' in 'mode => 2755'
