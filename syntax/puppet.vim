@@ -38,6 +38,7 @@ syn match   puppetTypeName      "[a-z]\w*" contained
 syn match   puppetTypeDefault   "[A-Z]\w*" contained
 
 syn match   puppetParam           "\w\+\s*\(=\|+\)>" contains=puppetTypeRArrow,puppetParamName
+syn match   puppetResSep          ';'
 syn match   puppetParamRArrow       "\(=\|+\)>" contained
 syn match   puppetParamName       "\w\+" contained contains=@NoSpell
 syn match   puppetVariable           "$\(\(\(::\)\?\w\+\)\+\|{\(\(::\)\?\w\+\)\+}\)"
@@ -116,6 +117,7 @@ if version >= 508 || !exists("did_puppet_syn_inits")
   HiLink puppetBrace                Delimiter
   HiLink puppetTypeBrace            Delimiter
   HiLink puppetParen                Delimiter
+  HiLink puppetResSep               Delimiter
   HiLink puppetDelimiter            Delimiter
   HiLink puppetControl              Statement
   HiLink puppetDefType              Define
