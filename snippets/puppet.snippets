@@ -20,6 +20,14 @@ node '${1:`Filename('', 'fqdn')`}' {
 }
 endsnippet
 
+snippet resources "Default for resources resource" b
+resources { '${1:resource}':
+  purge               => $2`!p snip.rv=complete(t[2], [ 'true', 'false'])`,
+  noop                => $3`!p snip.rv=complete(t[3], [ 'true', 'false'])`,
+  unless_system_user  => $4`!p snip.rv=complete(t[4], [ 'true', 'false'])`,
+}
+endsnippet
+
 snippet create_resources "Defaults for crete_resources" b
 create_resource( ${1:resource}, ${2:hash whith resource describing}, ${3:hash with defaults})
 endsnippet
@@ -51,6 +59,13 @@ endsnippet
 snippet else
 else {
   ${1}
+}
+endsnippet
+
+snippet augeas "Augeas Defaults" b
+augeas{'${1:name}' :
+  context => '${2}',
+  changes => '${3}',
 }
 endsnippet
 
@@ -155,6 +170,10 @@ yumrepo{'${1:repo name}':
   enabled => ${3:1}
 }
 endsnippet
+
+snippet template "Autocomplete templates"
+template('${1:module_name}/${2:template_name}')
+endsnippeT
 
 snippet define
 define ${1} (${2}) {
