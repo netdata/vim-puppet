@@ -64,8 +64,8 @@ endsnippet
 
 snippet augeas "Augeas Defaults" b
 augeas{'${1:name}' :
-  context => '${2}',
-  changes => '${3}',
+  context => '${2:/files/${3}}',
+  changes => '${4}',
 }
 endsnippet
 
