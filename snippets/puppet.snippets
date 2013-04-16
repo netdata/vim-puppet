@@ -4,6 +4,14 @@
 # see it in action @ http://www.devco.net/archives/2009/09/22/vim_and_puppet.php
 #
 # Some mods by Mikael Fridh.
+global !p
+def complete(t, opts):
+  if t:
+    opts = [ m[len(t):] for m in opts if m.startswith(t) ]
+  if len(opts) == 1:
+    return opts[0]
+  return "[" + '|'.join(opts) + ']'
+endglobal
 
 # Language Constructs
 snippet node "Defaults for node" b
@@ -128,9 +136,10 @@ endsnippet
 
 #
 # Types
-snippet host
+snippet host "Host defaults" b
 host{'${1:hostname}':
-  ip => ${2:127.0.0.1}
+  ensure => $2`!p snip.rv=complete(t[2], [ 'present', 'absent'])`
+  ip    => ${3:127.0.0.1}
 }
 endsnippet
 
