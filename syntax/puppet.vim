@@ -18,6 +18,7 @@ endif
 
 " match class/definition/node declarations
 syn region  puppetDefine        start="^\s*\(class\|define\|node\)\s" end="{" contains=puppetDefType,puppetDefName,puppetDefArguments,puppetNodeRe,@NoSpell
+syn region  puppetBlock         matchgroup=puppetBrace start="{" end="}" transparent fold
 syn keyword puppetDefType       class define node inherits contained
 syn region  puppetDefArguments  start="(" end=")" contained contains=puppetArgument,puppetString
 syn match   puppetArgument      "\w\+" contained
@@ -44,8 +45,8 @@ syn match   puppetParamName       "\w\+" contained contains=@NoSpell
 syn match   puppetVariable           "$\(\(\(::\)\?\w\+\)\+\|{\(\(::\)\?\w\+\)\+}\)"
 syn match   puppetParen           "("
 syn match   puppetParen           ")"
-syn match   puppetBrace           "{"
-syn match   puppetBrace           "}"
+syn match   puppetBrace           "{" contained
+syn match   puppetBrace           "}" contained
 syn match   puppetBrack           "\["
 syn match   puppetBrack           "\]"
 syn match   puppetBrack           "<|"
