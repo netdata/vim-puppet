@@ -66,9 +66,9 @@ syn match   puppetParamDigits   "[0-9]\+"
 " match 'template' in 'content => template("...")'
 syn match   puppetParam         "\w\+\s*[=+]>\s*\w\+\s*(" contains=puppetFunction,puppetParamName
 " statements
-syn region  puppetFunction      start="^\s*\(alert\|crit\|debug\|emerg\|err\|fail\|include\|info\|notice\|realize\|require\|search\|tag\|warning\)\s*(" end=")" contained contains=puppetString
+syn region  puppetFunction      start="^\s*\(alert\|create_resources\|crit\|debug\|emerg\|err\|fail\|hiera_include\|include\|info\|notice\|realize\|require\|search\|tag\|warning\)\s*(" end=")" contained contains=puppetString
 " rvalues
-syn region  puppetFunction      start="^\s*\(defined\|file\|fqdn_rand\|generate\|inline_template\|regsubst\|sha1\|shellquote\|split\|sprintf\|tagged\|template\|versioncmp\)\s*(" end=")" contained contains=puppetString
+syn region  puppetFunction      start="^\s*\(defined\|extlookup\|file\|fqdn_rand\|generate\|hiera\|hiera_array\|hiera_hash\|inline_template\|md5\|regsubst\|sha1\|shellquote\|split\|sprintf\|tagged\|template\|versioncmp\)\s*(" end=")" contained contains=puppetString
 
 syn match   puppetVariable      "$[a-zA-Z0-9_:]\+" contains=@NoSpell
 syn match   puppetVariable      "${[a-zA-Z0-9_:]\+}" contains=@NoSpell
@@ -82,7 +82,7 @@ syn match   puppetNotVariable   "\\$\w\+" contained
 syn match   puppetNotVariable   "\\${\w\+}" contained
 
 syn keyword puppetKeyword       import inherits include require
-syn keyword puppetControl       case default if else elsif
+syn keyword puppetControl       case default if else elsif unless
 syn keyword puppetSpecial       true false undef
 
 syn match   puppetClass         "[A-Za-z0-9_-]\+\(::[A-Za-z0-9_-]\+\)\+" contains=@NoSpell
