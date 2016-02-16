@@ -43,7 +43,7 @@ syn match   puppetParam           "\w\+\s*\(=\|+\)>" contains=puppetTypeRArrow,p
 syn match   puppetResSep          ';'
 syn match   puppetParamRArrow       "\(=\|+\)>" contained
 syn match   puppetParamName       "\w\+" contained contains=@NoSpell
-syn match   puppetVariable           "$\(\(\(::\)\?\w\+\)\+\|{\(\(::\)\?\w\+\)\+}\)"
+syn match   puppetVariable        "$\(\(::\)\?\w\+\|{\(::\)\?\w\+}\)"
 syn match   puppetParen           "("
 syn match   puppetParen           ")"
 syn match   puppetBrace           "{" contained
